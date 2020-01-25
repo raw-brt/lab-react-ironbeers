@@ -5,5 +5,15 @@ const http = axios.create({
 })
 
 const list = () => http.get('/')
+const search = (search) => http.get('/search', { params: { q: search } })
+const detail = (id) => http.get(`/${id}`)
+const random = () => http.get('/random')
+const create = (beer) => http.post(`/new`, beer)
 
-export default { list }
+export default {
+   list, 
+   search, 
+   detail,
+   random,
+   create 
+  }
